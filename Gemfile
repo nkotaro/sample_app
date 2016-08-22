@@ -47,3 +47,4 @@ end
 group :development, :test do
   gem 'rspec-rails',      ">= 2.0.0.beta"
 end
+gem 'coffee-script-source', '1.8.0'
