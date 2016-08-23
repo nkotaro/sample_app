@@ -3,8 +3,16 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.5'
 
+group :development, :test do
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'rspec-rails'
+end
+
+group :test do
+gem 'selenium-webdriver'
+gem 'capybara'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -17,7 +25,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -32,6 +39,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+gem 'pg'
+gem 'rails_12factor'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -43,8 +55,4 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-group :development, :test do
-  gem 'rspec-rails',      ">= 2.0.0.beta"
-end
-gem 'coffee-script-source', '1.8.0'
+gem 'test-unit'
